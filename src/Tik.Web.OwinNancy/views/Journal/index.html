@@ -1,0 +1,95 @@
+﻿@Master['_layout.html']
+
+@Section['navbar']
+<li><button class="pull-right btn navbar-btn btn-default" onclick="window.location.href='/signout'">Signout</button>
+@EndSection
+
+@Section['Content']
+<div class="container">
+
+	<h1>Recent Entries</h1>
+
+	<form class="form-horizontal" method="post" role="form">
+		<div class="form-group">
+      		<label class="control-label col-sm-2" for="entrydate"><i class="fa fa-fw fa-2x fa-calendar"></i></label>
+      		<div class="col-sm-4">
+        		<input type="datetime-local" class="form-control" name="entrydate" id="entrydate" placeholder="Entry Date" />
+      		</div>
+    	</div>
+
+		<div class="form-group">
+      		<label class="control-label col-sm-2" for="description">Describe the food...</label>
+      		<div class="col-sm-4">
+        		<textarea class="form-control" maxLength="1000" name="description" id="description" placeholder="Description"></textarea>
+      		</div>
+    	</div>
+
+	    <div class="form-group">
+  			<label class="control-label col-sm-2" for="hungerLevel">How hungry were you?</label>	
+	      <div class="col-sm-4">
+	          <label class="radio-inline">
+	            <input type="radio" name="hungerLevel" id="hungerLevel0" value="0"> None
+	          </label>
+	          <label class="radio-inline">
+				<input type="radio" name="hungerLevel" id="hungerLevel1" value="1"> Low
+	          </label>
+	          <label class="radio-inline">
+				<input type="radio" name="hungerLevel" id="hungerLevel2" value="2"> Normal
+	          </label>
+	          <label class="radio-inline">
+				<input type="radio" name="hungerLevel" id="hungerLevel3" value="3"> High
+	          </label>
+	          <label class="radio-inline">
+				<input type="radio" name="hungerLevel" id="hungerLevel4" value="4"> Extreme
+	          </label>
+	        </div>
+	    </div>
+	    <div class="form-group">
+  			<label class="control-label col-sm-2" for="enjoyment">Did you enjoy it?</label>	
+	      <div class="col-sm-6">
+	          <label class="radio-inline">
+	            <input type="radio" name="enjoyment" id="enjoyment0" value="0"> No! Gross! (0)
+	          </label>
+	          <label class="radio-inline">
+				<input type="radio" name="enjoyment" id="enjoyment1" value="1"> Meh (1)
+	          </label>
+	          <label class="radio-inline">
+				<input type="radio" name="enjoyment" id="enjoyment2" value="2"> OK (2)
+	          </label>
+	          <label class="radio-inline">
+				<input type="radio" name="enjoyment" id="enjoyment3" value="3"> Yeah! (3)
+	          </label>
+	          <label class="radio-inline">
+				<input type="radio" name="enjoyment" id="enjoyment4" value="4"> ZOMG! (4)
+	          </label>
+	      </div>
+	    </div>
+
+	    <div class="form-group">
+	      <div class="col-sm-offset-2 col-sm-4">
+	        <button type="submit" class="btn btn-primary">Submit</button>
+	      </div>
+	    </div>
+
+	</form>
+
+
+	@IfNot.HasRecentEntries
+	<hr/>
+	<p class="alert alert-warning">You don't have any recent entries.</p>
+	@EndIf
+
+	@If.HasRecentEntries
+		@Each.RecentEntries
+<hr/>
+		<h4>@Current.EntryDate</h4>
+		<p class="lead">@Current.Description</p>
+		<dl class="dl-horizontal">
+			<dt>Hunger Level</dt><dd>@Current.HungerLevel</dd>
+			<dt>Enjoyment</dt><dd>@Current.Enjoyment</dd>
+		</dl>
+
+		@EndEach
+	@EndIf
+</div>
+@EndSection

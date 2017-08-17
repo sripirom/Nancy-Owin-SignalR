@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{A1D7CE8C-9166-476B-B146-D5B0AF6FB98B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Tik.Web.OwinNancy</RootNamespace>
+    <AssemblyName>Tik.Web.OwinNancy</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Topshelf">
+      <HintPath>..\packages\Topshelf.4.0.3\lib\net452\Topshelf.dll</HintPath>
+    </Reference>
+    <Reference Include="Topshelf.Log4Net">
+      <HintPath>..\packages\Topshelf.Log4Net.4.0.3\lib\net452\Topshelf.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting">
+      <HintPath>..\packages\Microsoft.Owin.Hosting.3.1.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics">
+      <HintPath>..\packages\Microsoft.Owin.Diagnostics.3.1.0\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.3.1.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Owin">
+      <HintPath>..\packages\Nancy.Owin.1.4.1\lib\net40\Nancy.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Serialization.JsonNet">
+      <HintPath>..\packages\Nancy.Serialization.JsonNet.1.4.1\lib\net40\Nancy.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Topshelf.Linux">
+      <HintPath>..\packages\Topshelf.Linux.1.0.16.15\lib\Topshelf.Linux.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="Mono.CSharp" />
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Nancy.Authentication.Forms">
+      <HintPath>..\packages\Nancy.Authentication.Forms.1.4.1\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\packages\Npgsql.3.2.5\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="CryptSharp">
+      <HintPath>..\packages\CryptSharpOfficial.2.1.0.0\lib\CryptSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.1.4.4\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AppEngine\ServiceRootPathProvider.cs" />
+    <Compile Include="AppEngine\Bootstrapper.cs" />
+    <Compile Include="AppEngine\Startup.cs" />
+    <Compile Include="Routes\BaseNancyModule.cs" />
+    <Compile Include="Routes\JournalModule.cs" />
+    <Compile Include="Routes\RootModule.cs" />
+    <Compile Include="Routes\SecurityModule.cs" />
+    <Compile Include="Core\CustomJsonSerializer.cs" />
+    <Compile Include="Core\CustomStatusCodeHandler.cs" />
+    <Compile Include="Core\TextResourceViewEngineMapper.cs" />
+    <Compile Include="Core\Data\BaseDatabaseConfiguration.cs" />
+    <Compile Include="Core\Data\IDatabaseConfiguration.cs" />
+    <Compile Include="Core\Data\IQuery.cs" />
+    <Compile Include="Core\Data\ITransactionWrapper.cs" />
+    <Compile Include="Core\Data\TinyIoCDatabaseConfiguration.cs" />
+    <Compile Include="Core\Data\TransactionScopeWrapper.cs" />
+    <Compile Include="Core\Data\TransactionWrapper.cs" />
+    <Compile Include="Core\Data\UnitOfWork.cs" />
+    <Compile Include="Core\Security\CrypterExtensions.cs" />
+    <Compile Include="Core\Security\CustomCryptographyConfiguration.cs" />
+    <Compile Include="Core\Security\DatabaseUserMapper.cs" />
+    <Compile Include="Core\Security\IJournalUserMapper.cs" />
+    <Compile Include="Core\Security\InMemoryUserMapper.cs" />
+    <Compile Include="Core\Security\JournalUserIdentity.cs" />
+    <Compile Include="Core\Security\SecurityConfiguration.cs" />
+    <Compile Include="Models\Journal\Entry.cs" />
+    <Compile Include="Models\Journal\EntryCreateCommand.cs" />
+    <Compile Include="Models\Journal\HungerLevel.cs" />
+    <Compile Include="Models\Journal\RecentEntryListQuery.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="app.config" />
+    <None Include="Content\Public\css\custom.css" />
+    <None Include="Content\Public\css\scroller.css" />
+    <None Include="Content\Public\img\pt_topo_l.png" />
+    <None Include="Content\Public\js\.gitkeep" />
+    <None Include="Content\Vendor\.gitkeep" />
+    <None Include="views\_layout.html" />
+    <None Include="views\landing.html" />
+    <None Include="views\Error\400.html" />
+    <None Include="views\Error\404.html" />
+    <None Include="views\Error\500.html" />
+    <None Include="views\Journal\index.html" />
+    <None Include="views\Security\register.html" />
+    <None Include="views\Security\signin.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppEngine\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

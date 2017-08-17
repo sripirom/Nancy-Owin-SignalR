@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tik.Web.OwinNancy", "Tik.Web.OwinNancy\Tik.Web.OwinNancy.csproj", "{A1D7CE8C-9166-476B-B146-D5B0AF6FB98B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionEngine", "solutionEngine", "{E5B70EEF-484A-4B5C-992F-319DEB29C762}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DB03E21-F969-48BC-B93D-0224DCC393EC}.Debug|x86.ActiveCfg = Debug|x86
+		{1DB03E21-F969-48BC-B93D-0224DCC393EC}.Debug|x86.Build.0 = Debug|x86
+		{1DB03E21-F969-48BC-B93D-0224DCC393EC}.Release|x86.ActiveCfg = Release|x86
+		{1DB03E21-F969-48BC-B93D-0224DCC393EC}.Release|x86.Build.0 = Release|x86
+		{A1D7CE8C-9166-476B-B146-D5B0AF6FB98B}.Debug|x86.ActiveCfg = Debug|x86
+		{A1D7CE8C-9166-476B-B146-D5B0AF6FB98B}.Debug|x86.Build.0 = Debug|x86
+		{A1D7CE8C-9166-476B-B146-D5B0AF6FB98B}.Release|x86.ActiveCfg = Release|x86
+		{A1D7CE8C-9166-476B-B146-D5B0AF6FB98B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

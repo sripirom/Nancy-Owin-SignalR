@@ -1,0 +1,38 @@
+﻿using System;
+using Nancy.Cryptography;
+using System.Security.Cryptography;
+
+namespace CodeProgression.FoodJournal
+{
+	public class CustomCryptographyConfiguration
+	{
+		private static readonly Lazy<IKeyGenerator> KeyGenerator = new Lazy<IKeyGenerator> (() => {
+
+			var salt = "Ry1zdmJFdmZhb1FFaENSV0MtOXJzK3BNVm0tMX42MUlLOERjOS1QfE1LUldhRFhpXzh2UnV+bmJKYUMzCg==";
+			return new PassphraseKeyGenerator (
+				"xco5VT0EMTdalY21dbWmNAip*8AXvcnjTO_gUv2EMcnP+1IdW2_j5548xh",
+				Convert.FromBase64String (salt)
+			);
+		});
+
+		private static readonly Lazy<CryptographyConfiguration> DefaultConfiguration = new Lazy<CryptographyConfiguration> (() => {
+			return new CryptographyConfiguration (
+				new RijndaelEncryptionProvider (KeyGenerator.Value), 
+				new DefaultHmacProvider (KeyGenerator.Value));
+		});
+
+		private static readonly Lazy<CryptographyConfiguration> NoEncryptionConfiguration = new Lazy<CryptographyConfiguration> (() => {
+			return new CryptographyConfiguration (new NoEncryptionProvider(), new DefaultHmacProvider (KeyGenerator.Value));
+		});
+
+		public static CryptographyConfiguration Default
+		{
+			get{ return DefaultConfiguration.Value; }
+		}
+
+		public static CryptographyConfiguration NoEncryption
+		{
+			get{ return NoEncryptionConfiguration.Value; }
+		}
+	}
+}

@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>TIK Owin Nancy</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="@Path['~/Content/Public/css/scroller.css']"/>
+        <link rel="stylesheet" type="text/css" href="@Path['~/Content/Public/css/custom.css']"/>
+
+    </head>
+    <body>
+
+        <!-- Wrap all page content here -->
+        <div id="wrap">
+
+          <!-- Fixed navbar -->
+           <div class="navbar navbar-fixed-top alt" id="navbar" data-spy="affix">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">TIK Owin Nancy</a>
+              </div>
+              <div class="navbar-collapse collapse" id="navbar">
+                  @Section['navbar']
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+          <!-- Begin page content -->
+          <div class="body-container">
+              @Section['header']
+              @Section['Content']
+          </div>
+      </div>
+
+      <div id="footer">
+          <div class="row">
+              <ul class="list-inline text-muted">
+                  <li><a class="text-muted" href="http://www.sripirom.com">&copy; Touch Integration Kit</a></li>
+              </ul>
+          </div>
+      </div>
+
+    	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"> </script>
+      <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"> </script>
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+      @Section['scripts']
+
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"> </script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"> </script>
+        <!--[endif]-->
+    </body>
+</html>
