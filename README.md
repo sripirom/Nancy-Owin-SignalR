@@ -1,4 +1,4 @@
-# Nancy-Owin-SignalR
+# Nancy-Owin-SignalR V 0.1
 
 ### Touch Integration Kit
 ### pichit@sripirom.com
