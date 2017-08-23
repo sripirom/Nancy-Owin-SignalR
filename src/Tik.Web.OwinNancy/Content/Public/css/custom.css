@@ -1,0 +1,124 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -51px;
+  /* Pad bottom by footer height */
+  padding: 0 0 51px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  margin-top: 51px;
+  height: 51px;
+  text-align:center;
+}
+
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .body-container {
+  padding: 51px 0 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+/* Template flash fix for AngularJS*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* Href fix for AngularJS UI Bootstrap */
+.nav, .pagination, .carousel a { cursor: pointer; }
+
+/* Scroller overrides */
+.navbar a:hover {
+  color:#fff;
+  font-size:14px;
+}
+
+
+.header{
+  padding-bottom: 5px;
+}
+
+.header .lead {
+  color:#fff;
+  font-size:25px;
+}
+
+p.copy{
+    color: #7fdcaa;
+
+    font-size: 20px;
+    text-transform:normal;
+}
+
+.alt {
+  background-color: #060d3d;
+}
+
+.navbar {
+  background-color: #060d3d;
+}
+
+.alt .lead {
+  color: #f3f3f3;
+}
+
+.alt.navbar a {
+  color:#fff;
+  font-size:14px;
+}
+
+.alt.affix {
+  background-color:#060d3d;
+}
+
+.alt li a:hover, .alt li.active {
+  background-color: #1748bd;
+}
+
+
+.blurb {
+  padding: 60px 0;
+}
+
+.blurb.alt {
+color: #ffffff;
+    color: #ffffff;
+}
+
+.blurb.alt .lead{
+  color: #a3f9b1;
+}
+
+.featurette{
+}
+
+.featurette.alt {
+  background-color:#fefefe;
+}

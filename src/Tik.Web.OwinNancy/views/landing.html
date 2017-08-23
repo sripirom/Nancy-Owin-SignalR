@@ -1,0 +1,90 @@
+@Master['_layout']
+
+@Section['navbar']
+      <ul class="nav navbar-nav" >
+        <li><a href="#header">Getting Started</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	@If.IsAuthenticated
+			<li><a href="@Path['~/journal']">Welcome back, @Model.JournalUser.Name</a></li>
+			<li><button type="button" class="navbar-btn btn" 
+				onclick='window.location.href="@Path['/signout']"'>Sign Out</button>&nbsp;&nbsp;&nbsp;</li>
+		@EndIf
+
+		@IfNot.IsAuthenticated
+	        <li><button type="button" class="navbar-btn btn" onclick='window.location.href="@Path['/register']"'>Register</button>&nbsp;&nbsp;&nbsp;</li>
+	        <li><button type="button" class="navbar-btn btn btn-default" onclick='window.location.href="@Path['/signin']"'>Sign In</button></li>
+	    @EndIf
+      </ul>
+@EndSection
+
+@Section['header']
+<div id="header" class="header alt vert">
+
+</div>
+@EndSection
+
+
+@Section['Content']
+<div id="what" class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h1>POC Owin and NancyFx</h1>
+        <p>Sample Project using Owin selfhost with Nancy</p>
+        <div>
+          &nbsp;
+        </div>
+          <ol>
+              <li>CryptSharpOfficial" version="2.1.0.0" </li>
+              <li>Dapper" version="1.50.2" </li>
+              <li>log4net" version="2.0.5" </li>
+              <li>Microsoft.Owin" version="3.1.0" </li>
+              <li>Microsoft.Owin.Diagnostics" version="3.1.0" </li>
+              <li>Microsoft.Owin.Host.HttpListener" version="3.1.0" </li>
+              <li>Microsoft.Owin.Hosting" version="3.1.0" </li>
+              <li>Nancy" version="1.4.4" </li>
+              <li>Nancy.Authentication.Forms" version="1.4.1" </li>
+              <li>Nancy.Owin" version="1.4.1" </li>
+              <li>Nancy.Serialization.JsonNet" version="1.4.1" </li>
+              <li>Newtonsoft.Json" version="6.0.8" </li>
+              <li>Npgsql" version="3.2.5" </li>
+              <li>Owin" version="1.0" </li>
+              <li>System.Threading.Tasks.Extensions" version="4.3.0" </li>
+              <li>Topshelf" version="4.0.3" </li>
+              <li>Topshelf.Linux" version="1.0.16.15" </li>
+              <li>Topshelf.Log4Net" version="4.0.3" </li>
+          </ol>
+
+
+      </div>
+      <div class="col-md-5">
+        <h1 class="pull-right"><i class="icon-mobile-phone icon-3x"></i> <i class="icon-tablet icon-3x"></i> <i class="icon-laptop icon-3x"></i></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+@EndSection
+
+@Section['scripts']
+
+        <ul class="nav pull-right scroll-down">
+          <li><a href="#" title="Scroll down"><i class="fa fa-chevron-down fa-3x"></i></a></li>
+        </ul>
+        <ul class="nav pull-right scroll-top">
+          <li><a href="#" title="Scroll to top"><i class="fa fa-chevron-up fa-3x"></i></a></li>
+        </ul>
+        <script>
+        /* smooth scrolling for scroll to top */
+          $('.scroll-top').click(function(){
+            $('body,html').animate({scrollTop:0},800);
+          })
+          /* smooth scrolling for scroll down */
+          $('.scroll-down').click(function(){
+            $('body,html').animate({scrollTop:$(window).scrollTop()+800},1000);
+          })
+
+          $('body').scrollspy({ target: "#navbar", offset: 120});
+        </script>
+@EndSection

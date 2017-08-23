@@ -1,0 +1,27 @@
+﻿@Master['_layout.html']
+
+
+@Section['navbar']
+      <ul class="nav navbar-nav navbar-right">
+		@If.IsAuthenticated
+		<li><a href="@Path['~/journal']">Welcome back, @Model.JournalUser.Name</a></li>
+		<li><button type="button" class="navbar-btn btn" onclick='window.location.href="@Path['/signout']"'>Sign Out</button>&nbsp;&nbsp;&nbsp;</li>
+		@EndIf
+
+		@IfNot.IsAuthenticated
+        <li><button type="button" class="navbar-btn btn" onclick='window.location.href="@Path['/register']"'>Register</button>&nbsp;&nbsp;&nbsp;</li>
+        <li><button type="button" class="navbar-btn btn btn-default" onclick='window.location.href="@Path['/signin']"'>Sign In</button></li>
+      	@EndIf
+	  </ul>
+	
+@EndSection
+
+@Section['Content']
+<div id="header" class="blurb vert">
+	<div class="container">
+		<h2><small>500: Internal Server Error</small></h2>
+		<h1>Whoa! That one's on me!<br/>
+		<small>I'll see if I can figure out what happened</small></h1>
+	</div>
+</div>
+@EndSection

@@ -1,0 +1,63 @@
+@Master['_layout.html']
+
+@Section['navbar']
+  <li><button type="button" class="pull-right navbar-btn btn btn-default" onclick='window.location.href="@Path['~/signin']"'>Sign In</button></li>
+@EndSection
+
+@Section['Content']
+
+<div class="container">
+
+  <h1>Register</h1>
+
+
+  <div  class="col-sm-offset-2 col-sm-10">
+  	<p><em>Already have an account? <a href="@Path['~/signin']">Sign in</a></em></p>
+  </div>
+
+  <form class="form-horizontal" method="post" role="form">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="username"><i class="fa fa-fw fa-2x fa-user"></i></label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Name"><i class="fa fa-fw fa-2x fa-comment"></i></label>
+      <div class="col-sm-4">
+        <input type="name" class="form-control" name="name" id="name" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email"><i class="fa fa-fw fa-2x fa-envelope"></i></label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="password"><i class="fa fa-fw fa-2x fa-lock"></i></label>
+      <div class="col-sm-4">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="passwordConfirm"><i class="fa fa-fw fa-2x fa-lock"></i></label>
+      <div class="col-sm-4">
+        <input type="password" class="form-control" name="passwordConfirm" id="passwordConfirm" placeholder="Confirm Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-4">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <p class="help-block">By clicking <strong>Register</strong>, you agree to our <a>terms of service</a> and <a>privacy policy</a>.</p>
+      </div>
+    </div>
+    @If.HasError
+    <div class="form-group">
+      <div id="errorBox" class="col-sm-offset-2 col-sm-4 alert alert-danger">@Model.ErrorMessage</div>
+    </div>
+    @EndIf
+  </form>
+</div>
+@EndSection
