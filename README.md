@@ -20,5 +20,6 @@ install unget packages
 - HostAddress
 - HostPort
 
+- Commit hook tiga
 
 - Add link Tiga
